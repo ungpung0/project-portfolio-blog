@@ -1,8 +1,17 @@
 package com.ungpung0.blog.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.*;
 
 @Entity
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 @Table(name = "BOARD")
 public class BoardEntity extends BaseEntity {
     @Id
