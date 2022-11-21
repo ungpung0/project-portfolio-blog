@@ -12,7 +12,7 @@ public class BoardController {
 
     @GetMapping({"/", "/lists"})
     public String lists() {
-        log.info("Log: Entering lists Page...");
+        log.info("LOG: Entering lists Page...");
 
         return "/board/lists";
     }

@@ -28,5 +28,4 @@ public class ReplyEntity extends BaseEntity {
     @ManyToOne
     @JoinColumn(name = "BOARD_ID")
     private BoardEntity board;
-
 }

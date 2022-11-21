@@ -15,7 +15,6 @@ import java.time.LocalDateTime;
 @Data
 @Table(name = "MEMBER")
 public class MemberEntity extends BaseEntity {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "MEMBER_ID")

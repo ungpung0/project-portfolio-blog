@@ -27,5 +27,4 @@ public class BoardEntity extends BaseEntity {
 
     @Column(name = "BOARD_AUTHOR")
     private String boardAuthor;
-
 }
