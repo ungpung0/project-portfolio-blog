@@ -1,9 +1,6 @@
 package com.ungpung0.blog.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -11,7 +8,8 @@ import javax.persistence.*;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
+@ToString
 @Table(name = "BOARD")
 public class BoardEntity extends BaseEntity {
     @Id

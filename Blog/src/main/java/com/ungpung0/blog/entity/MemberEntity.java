@@ -1,9 +1,6 @@
 package com.ungpung0.blog.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -12,7 +9,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+@Getter
 @Table(name = "MEMBER")
 public class MemberEntity extends BaseEntity {
     @Id
