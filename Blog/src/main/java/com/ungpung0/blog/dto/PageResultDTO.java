@@ -29,6 +29,14 @@ public class PageResultDTO<DTO, ENTITY> {
 
     private List<Integer> pageList;
 
+    public PageResultDTO(Page<ENTITY> pageResult, Function<ENTITY, DTO> function) {
+        pageDTOList = pageResult.stream().map(function).collect(Collectors.toList());
+
+        pageTotal = pageResult.getTotalPages();
+
+        pagingList(pageResult.getPageable());
+    }
+
     private void pagingList(Pageable pageable) {
         this.pageCurrent = pageable.getPageNumber() + 1;
         int calculate = (int)(Math.ceil(pageCurrent / 10.0)) * 10;
@@ -45,12 +53,4 @@ public class PageResultDTO<DTO, ENTITY> {
 
         pageList = IntStream.rangeClosed(indexStart, indexEnd).boxed().collect(Collectors.toList());
     }
-    public PageResultDTO(Page<ENTITY> pageResult, Function<ENTITY, DTO> function) {
-        pageDTOList = pageResult.stream().map(function).collect(Collectors.toList());
-
-        pageTotal = pageResult.getTotalPages();
-
-        pagingList(pageResult.getPageable());
-    }
-
 }

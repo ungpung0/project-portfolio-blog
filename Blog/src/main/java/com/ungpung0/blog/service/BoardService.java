@@ -6,7 +6,7 @@ import com.ungpung0.blog.dto.PageResultDTO;
 import com.ungpung0.blog.entity.BoardEntity;
 
 public interface BoardService {
-    void register(BoardDTO boardDTO);
+    void doWrite(BoardDTO boardDTO);
 
     PageResultDTO<BoardDTO, BoardEntity> getList(PageRequestDTO pageRequestDTO);
     default BoardEntity dtoToEntity(BoardDTO boardDTO) {

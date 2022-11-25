@@ -19,8 +19,9 @@ import java.util.function.Function;
 @RequiredArgsConstructor
 public class BoardServiceImplement implements BoardService {
     private final BoardRepository boardRepository;
+
     @Override
-    public void register(BoardDTO boardDTO) {
+    public void doWrite(BoardDTO boardDTO) {
         BoardEntity boardEntity = dtoToEntity(boardDTO);
 
         boardRepository.save(boardEntity);
