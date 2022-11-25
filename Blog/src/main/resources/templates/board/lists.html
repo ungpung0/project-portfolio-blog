@@ -6,6 +6,43 @@
 </head>
 <body>
     <h2>Board List Page</h2>
-    <p>Welcome to Board List Page...</p>
+
+    <!-- 게시글 리스트 -->
+    <table border="1">
+        <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Content</th>
+            <th scope="col">Author</th>
+            <th scope="col">Moddate</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="dto : ${result.pageDTOList}">
+            <th scope="row">[[${dto.boardId}]]</th>
+            <td>[[${dto.boardTitle}]]</td>
+            <td>[[${dto.boardContent}]]</td>
+            <td>[[${dto.boardAuthor}]]</td>
+            <td>[[${#temporals.format(dto.modifiedDate, 'yyyy/MM/dd')}]]</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- 페이지 이동 섹션 -->
+    <div class="pagination">
+        <button class="pageItem" th:if="${result.previous}">
+            <a class="pageLink" th:href="@{/board/lists(pageCurr=${result.indexStart - 1})}">Previous</a>
+        </button>
+        <button class="pageItem" th:each="page : ${result.pageList}">
+            <a class="pageLink" th:href="@{/board/lists(pageCurr=${page})}">
+                [[${page}]]
+            </a>
+        </button>
+        <button class="pageItem" th:if="${result.next}">
+            <a class="pageLink" th:href="@{/board/list(pageCurr=${result.indexEnd + 1})}">Next</a>
+        </button>
+    </div>
+
 </body>
 </html>

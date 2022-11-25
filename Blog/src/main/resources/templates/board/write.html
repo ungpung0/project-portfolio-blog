@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Board Write Page</title>
+</head>
+<body>
+    <h2>Board Write Page</h2>
+
+    <!-- 입력 폼-->
+    <form th:action="@{/board/write}" th:method="post">
+        <div class="formGroup">
+            <label>Title</label>
+            <input type="text" class="formControl" name="boardTitle" placeholder="Enter Board Title">
+        </div>
+        <div class="formGroup">
+            <label>Content</label>
+            <textarea class="formControl" rows="5" name="boardContent" placeholder="Enter Board Content"></textarea>
+        </div>
+        <div class="formGroup">
+            <label>Author</label>
+            <input type="text" class="formControl" name="boardAuthor" placeholder="Enter Board Author">
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>
