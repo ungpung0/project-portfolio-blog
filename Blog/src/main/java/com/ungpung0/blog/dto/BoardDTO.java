@@ -10,9 +10,14 @@ import java.time.LocalDateTime;
 @Data
 public class BoardDTO {
     private Long boardId;
+
     private String boardTitle;
+
     private String boardContent;
+
     private String boardAuthor;
+
     private LocalDateTime createdDate;
+
     private LocalDateTime modifiedDate;
 }
