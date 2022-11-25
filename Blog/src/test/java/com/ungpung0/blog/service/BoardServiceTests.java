@@ -22,7 +22,7 @@ public class BoardServiceTests {
                 .boardAuthor("Dummy Author")
                 .build();
 
-        boardService.register(boardDTO);
+        boardService.doWrite(boardDTO);
     }
 
     @Test
@@ -33,7 +33,7 @@ public class BoardServiceTests {
 
         System.out.println("===== PageResultDTO =====");
         System.out.println("PREV : " + pageResultDTO.isPrevious());
-        System.out.println("PREV : " + pageResultDTO.isNext());
+        System.out.println("NEXT : " + pageResultDTO.isNext());
         System.out.println("TOTAL : " + pageResultDTO.getPageTotal());
 
         System.out.println("===== Pages Data =====");
